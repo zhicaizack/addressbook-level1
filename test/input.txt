@@ -14,14 +14,14 @@
   list
 
 ##########################################################
-# test add person command, setup state for futuer tests
+# test add person command, setup state for future tests
 ##########################################################
 
   # should catch invalid args format
   add wrong args wrong args
   add Valid Name p/12345 valid@email.butNoPrefix
   add Valid Name 12345 e/valid@email.butPhonePrefixMissing
-  
+
   # should catch invalid person data
   add []\[;] p/12345 e/valid@e.mail
   add Valid Name p/not_numbers e/valid@e.mail
@@ -40,6 +40,12 @@
   list
   add Esther Potato p/555555 e/esther@notreal.potato
   list
+  add zack gian p/77777777 e/zhicai@u.nus.edu
+  list
+  add zack gian p/77777777 e/zhicai@u.nus.edu
+  list
+  add zack the IMPOSSIBLE p/77777777 e/zhicai@u.nus.edu
+  list
 
 ##########################################################
 # test find persons command
@@ -51,7 +57,7 @@
   find bet
   # does not match if none have keyword
   find 23912039120
-  # matching should be case-sensitive
+  # matching should be case insensitive
   find betsy
 
   # find unique keyword
@@ -60,6 +66,10 @@
   find Dickson
   # find multiple with some keywords
   find Charlie Betsy
+  #find multiple containing keywords
+  find zack the
+  #find multiple containing keywords
+  find the IMPOSSIBLE
 
 ##########################################################
 # test delete person command

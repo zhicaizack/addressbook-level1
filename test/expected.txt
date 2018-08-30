@@ -55,7 +55,7 @@
 || 	Parameters: NAME p/PHONE_NUMBER e/EMAIL
 || 	Example: add John Doe p/98765432 e/johnd@gmail.com
 || 
-|| find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
+|| find: Finds all persons whose names contain any of the specified keywords (case insensitive) and displays them as a list with index numbers.
 || 	Parameters: KEYWORD [MORE_KEYWORDS]
 || 	Example: find alice bob charlie
 || 
@@ -171,6 +171,48 @@
 || 
 || 5 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  add zack gian p/77777777 e/zhicai@u.nus.edu]
+|| New person added: zack gian, Phone: 77777777, Email: zhicai@u.nus.edu
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
+|| 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	6. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 
+|| 6 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  add zack gian p/77777777 e/zhicai@u.nus.edu]
+|| New person added: zack gian, Phone: 77777777, Email: zhicai@u.nus.edu
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
+|| 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	6. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	7. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 
+|| 7 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  add zack the IMPOSSIBLE p/77777777 e/zhicai@u.nus.edu]
+|| New person added: zack the IMPOSSIBLE, Phone: 77777777, Email: zhicai@u.nus.edu
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
+|| 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	6. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	7. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	8. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 
+|| 8 persons found!
+|| ===================================================
 || Enter command: || [Command entered:  find]
 || 
 || 0 persons found!
@@ -184,8 +226,9 @@
 || 0 persons found!
 || ===================================================
 || Enter command: || [Command entered:  find betsy]
+|| 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 
-|| 0 persons found!
+|| 1 persons found!
 || ===================================================
 || Enter command: || [Command entered:  find Betsy]
 || 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
@@ -203,6 +246,18 @@
 || 	2. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 || 
 || 2 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  find zack the]
+|| 	1. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	2. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	3. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 
+|| 3 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  find the IMPOSSIBLE]
+|| 	1. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 
+|| 1 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete]
 || Invalid command format: delete 
@@ -236,37 +291,49 @@
 || The person index provided is invalid
 || ===================================================
 || Enter command: || [Command entered:  delete 2]
-|| Deleted Person: Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| The person index provided is invalid
 || ===================================================
 || Enter command: || [Command entered:  delete 2]
-|| Person could not be found in address book
+|| The person index provided is invalid
 || ===================================================
 || Enter command: || [Command entered:  list]
 || 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 || 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
-|| 	3. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
-|| 	4. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	6. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	7. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	8. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
 || 
-|| 4 persons found!
+|| 8 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete 4]
-|| Deleted Person: Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| Deleted Person: Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
 || ===================================================
 || Enter command: || [Command entered:  list]
 || 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 || 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
-|| 	3. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	5. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	6. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	7. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
 || 
-|| 3 persons found!
+|| 7 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete 1]
 || Deleted Person: Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 || ===================================================
 || Enter command: || [Command entered:  list]
 || 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
-|| 	2. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	2. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	3. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	4. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	5. zack gian  Phone Number: 77777777  Email: zhicai@u.nus.edu
+|| 	6. zack the IMPOSSIBLE  Phone Number: 77777777  Email: zhicai@u.nus.edu
 || 
-|| 2 persons found!
+|| 6 persons found!
 || ===================================================
 || Enter command: || [Command entered:  clear]
 || Address book has been cleared!
